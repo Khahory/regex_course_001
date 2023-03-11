@@ -1,5 +1,9 @@
 /*
 CUANTIFICADORES:
+* -> quiere decir que viene una letra si o no infinitas veces
++ -> quiere decir que viene una letra si o no infinitas veces, pero al menos una vez
+? -> quiere decir que viene una letra si o no una vez
+
 
 nos dice:
     1 - cuantas veces se repite un caractere en uns string
@@ -19,6 +23,9 @@ ejemplo:
 
     (+) /^ae+$/ -> 'aaaaeee' -> false
         estamos indicando que solo quere UNA SOLA 'a' iniciando y no infinitas 'a'
+
+    (?) /^a?e?$/ -> 'aeeee' -> true
+        tenemos UNA 'a' o UNA 'e' o NADA
 
  */
 let regex, text;

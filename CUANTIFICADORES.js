@@ -36,3 +36,22 @@ if (regex.test(text))
     console.log('Es correcto ♥‿♥', text, regex)
 else
     console.error('No es bueno (╥﹏╥)', text, regex)
+
+
+// ------------------------------------------------------
+console.log('------------------------------------------------------')
+// ------------------------------------------------------
+
+
+/*
+podemos establecer rangos
+    {1,2} -> debe de venir la letra '1' 1 o 2 veces
+    {3,} -> debe de venir la letra '1' 3 o mas veces
+ */
+regex = /^pato1{3,}$/
+text = 'pato1111'
+if (regex.test(text))
+    console.log('Es correcto ♥‿♥', text, regex)
+else
+    console.error('No es bueno (╥﹏╥)', text, regex)
+

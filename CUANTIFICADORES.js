@@ -46,7 +46,14 @@ console.log('------------------------------------------------------')
 /*
 podemos establecer rangos
     {1,2} -> debe de venir la letra '1' 1 o 2 veces
+
     {3,} -> debe de venir la letra '1' 3 o mas veces
+
+    . -> cualquier caracter, puede ser cualquier letra, numero, simbolo, etc
+        /^pato.1{3,}A$/ -> 'pato1111A' -> true
+
+    /^pato1{3,}A$/ -> 'pato1111A' -> true
+        porque tenemos 'pato' al inicio, '1' 3 o mas veces, 'A' al final
  */
 regex = /^pato1{3,}$/
 text = 'pato1111'
@@ -55,3 +62,29 @@ if (regex.test(text))
 else
     console.error('No es bueno (╥﹏╥)', text, regex)
 
+
+// ------------------------------------------------------
+console.log('------------------------------------------------------')
+// ------------------------------------------------------
+
+
+/*
+vamos hacer un ejemplo para extraer items de unos tags
+    <beer>Maleton</beer>
+    <beer>TheGloze</beer>
+
+    si queremos agregar un '/' en el regex, tenemos que ponerlo asi: \/
+
+    '.' -> cualquier caracter
+    '*' -> cualquier caracter 0 o mas veces (infinitas)
+    'g' -> global, para que busque en todo el string
+ */
+
+
+regex = /<beer>.*?<\/beer>/g
+text = '<beer>Maleton</beer><beer>TheGloze</beer>'
+console.log(text.match(regex))
+// if (regex.test(text))
+//     console.log('Es correcto ♥‿♥', text, regex)
+// else
+//     console.error('No es bueno (╥﹏╥)', text, regex)
